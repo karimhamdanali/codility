@@ -1,5 +1,11 @@
 package codility;
 
+/**
+ * https://codility.com/demo/results/trainingTQGQRS-VFF/
+ * https://codility.com/demo/results/trainingSBMTF6-VDA/
+ * @author karim
+ *
+ */
 public class BinaryGap {
 
 	public static void main(String[] args) {

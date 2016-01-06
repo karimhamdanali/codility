@@ -2,6 +2,13 @@ package codility;
 
 import java.util.HashSet;
 
+/**
+ * https://codility.com/demo/results/trainingWBEZM7-HET/
+ * https://codility.com/demo/results/trainingBEV3E8-7Y5/
+ * 
+ * @author karim
+ *
+ */
 public class OddOccurrencesInArray {
 	// A is non-empty
 	// N is odd
