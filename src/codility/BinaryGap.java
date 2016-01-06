@@ -5,13 +5,19 @@ public class BinaryGap {
 	public static void main(String[] args) {
 		System.out.println("Solution is " + solution(0));
 		System.out.println("Solution is " + solution(1));
+		System.out.println("Solution is " + solution(5));
+		System.out.println("Solution is " + solution(6));
 		System.out.println("Solution is " + solution(8));
 		System.out.println("Solution is " + solution(9));
 		System.out.println("Solution is " + solution(15));
+		System.out.println("Solution is " + solution(16));
+		System.out.println("Solution is " + solution(20));
 		System.out.println("Solution is " + solution(30));
 		System.out.println("Solution is " + solution(257));
 		System.out.println("Solution is " + solution(320));
+		System.out.println("Solution is " + solution(1024));
 		System.out.println("Solution is " + solution(1041));
+		System.out.println("Solution is " + solution(51712));
 		System.out.println("Solution is " + solution(406287));
 	}
 	
@@ -29,7 +35,8 @@ public class BinaryGap {
             if(start < 0) break; // stopping condition
             
             int end = binary.indexOf('1', start) - 1;
-            if(end < 0) end = binary.length() - 1;
+            if(end < 0) break; // ignore trailing zeroes
+            
             System.out.println("Start = " + start);
             System.out.println("End = " + end);
             System.out.println("Temp = " + (end - start));
