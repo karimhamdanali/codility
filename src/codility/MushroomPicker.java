@@ -88,11 +88,19 @@ public class MushroomPicker {
 * range if the rightward moves above brought us to a higher value than the end of mushroom road.
 *
 * k + (m - i * 2) -> means:
-* Calculate the `moves used` to get me to and from the `first` position back to were I started. (i * 2)
-* Deduct `moves used` from my move allowance `m` to give me `moves remaining`
-* Add `moves remaining` to `k` to give me the amount of real progress moves to the right (if any)
+* Calculate the `moves used` to get me to and from the `first` position back to were I started: [i * 2]
+* Deduct `moves used` from my move allowance `m` to give me `moves remaining`:  [m - i * 2]
+* Add `moves remaining` to `k` to give me the amount of real progress moves to the right (if any): [k + (m - i*2)]
 * 
 * We return our attention to the line 32: prefix[last] - prefix[first - 1] : prefix[last])
-* Given that we now have a maxiumum range of movement based on `i` steps to the left lets work out the total within that range
-* We keep that total for each iteration of `i` and switch it only if a range yeilds a higher total - typical max loop!
+*
+* Given that we now have a maxiumum range of movement based on `i` steps to the left and the maximum from this position
+* to the right, lets work out the total within that range. We keep that total for each iteration of `i` and replace it only
+* if the current iterated range yeilds a higher total. max(max, `work out current slice total`)
+* 
+* Finally line 29 (Should've started here maybe) controls the for loop. It directly controls the range for the amount of left
+* steps that we'll iterate between. In our case we don't want to move beyond the start of the array. We compare the start
+* position against the amount of moves and take the lowest. This basically means that if m is greater that the known distance
+* from the beginning of the array to were we are, then use the known distance.
 */
+
