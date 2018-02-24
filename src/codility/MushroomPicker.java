@@ -55,9 +55,9 @@ public class MushroomPicker {
 *
 * What's happening (It's really concise!):
 * The loop is set up with `for(int i = 0; i < Math.min(k, m) ; i++)`
-* This is acknowledging that our starting position k is based on an offset from the beginning of the array. This means that
-* if our amount of initial left step moves `m` could take us out of range i.e. before the the beginning, then don't!
-* In this case just use the start position amount of iterations as the maximum amount of left iterations.
+* This is acknowledging that our starting position k is a known offset from the beginning of the array. This basically
+* means that if `m` is greater that the known distance from the beginning of the array to were we are 'k`, then use
+* the known distance to control our left steps `i`.
 *
 * The algorithm works by using the `i` as the amount of left steps and then moving as far to the right as the moves would allow
 * to get the right (end slice).
@@ -98,9 +98,5 @@ public class MushroomPicker {
 * to the right, lets work out the total within that range. We keep that total for each iteration of `i` and replace it only
 * if the current iterated range yeilds a higher total. max(max, `work out current slice total`)
 * 
-* Finally line 29 (Should've started here maybe) controls the for loop. It directly controls the range for the amount of left
-* steps that we'll iterate between. In our case we don't want to move beyond the start of the array. We compare the start
-* position against the amount of moves and take the lowest. This basically means that if m is greater that the known distance
-* from the beginning of the array to were we are, then use the known distance.
 */
 
