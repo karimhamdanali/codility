@@ -35,15 +35,17 @@ public class OddOccurrencesInArray {
 	// Space: O(N)
 	public static int solution2(int[] A) {
 		// write your code in Java SE 8
-		HashSet<Integer> dups = new HashSet<Integer>();
-		int elem = -1;
+        HashSet<Integer> dups = new HashSet<>();
 
-		for (int i = 0; i < A.length; i++) {
-			if (dups.add(A[i])) {
-				elem = A[i];
-			}
-		}
-		return elem;
+        for (int i = 0; i < A.length; i++)
+        {
+            if (!dups.add(A[i]))
+            {           
+                dups.remove((A[i]));
+            } 
+        }
+        
+        return (Integer) dups.toArray()[0];
 	}
 
 	// Time: O(N^2)
